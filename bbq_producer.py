@@ -3,7 +3,7 @@ This program sends messages read from a CSV file to a queue on the RabbitMQ serv
 Adds logging instead of print statements for better visibility.
 
 Author: Derek Graves
-Date: May 24, 2024
+Date: May 31, 2024
 """
 
 import pika
@@ -67,9 +67,9 @@ def read_tasks_from_csv(filename=CSV_FILE):
             task_reader = csv.DictReader(csvfile)
             for row in task_reader:
                 tasks.append({
-                    "timestamp": row["Time"]
-                    "smoker_temp": row["Channel1"]
-                    "food_a_temp": row["Channel2"]
+                    "timestamp": row["Time"],
+                    "smoker_temp": row["Channel1"],
+                    "food_a_temp": row["Channel2"],
                     "food_b_temp": row["Channel3"]
                 })
     except FileNotFoundError:
@@ -85,8 +85,10 @@ if __name__ == "__main__":
 
     # Send each task to the queue
     for task in tasks:
-        send_message(HOST, "01-smoker", f"task['timestamp'] task['smoker_temp']")
-        send_message(HOST, "02-food-A", f"task['timestamp'] task['food_a_temp']")
-        send_message(HOST, "03-food-B", f"task['timestamp'] task['food_b_temp']")
-        time.sleep(DELAY) #Simulate sleep between messages 30 seconds
+        send_message(HOST, "01-smoker", f"{task['timestamp']}, {task['smoker_temp']}")
+        if task['food_a_temp']:
+            send_message(HOST, "02-food-A", f"{task['timestamp']}, {task['food_a_temp']}")
+        if task['food_b_temp']:
+            send_message(HOST, "03-food-B", f"{task['timestamp']}, {task['food_b_temp']}")
+        time.sleep(DELAY)  # Simulate sleep between messages 30 seconds
 
