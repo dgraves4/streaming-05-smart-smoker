@@ -55,6 +55,7 @@ pip install -r requirements.txt
 ```bash
 streaming-05-smart-smoker/
 ├── .venv/
+├── images/
 ├── .gitignore
 ├── bbq_producer_v1.0.py
 ├── requirements.txt
@@ -202,9 +203,9 @@ if __name__ == "__main__":
 ## Screenshots
 
 See a running example of the code executing in the terminal, as well as an example of RabbitMQ Admin displaying that all queues are running:
-![RabbitMQ Admin](images\AdminQueues.png)
-![Terminal Initial Execution](images\InitialExecute.png)
-![Terminal Sending Data to Queue](images\SendingData.png)
+![RabbitMQ Admin](images/AdminQueues.pngAdminQueues.png)
+![Terminal Initial Execution](images/InitialExecute.png)
+![Terminal Sending Data to Queue](images/SendingData.png)
 
 ## Future Enhancements
 - Consumers: Next module will see the addition of consumers to process the messages from the queues. 
