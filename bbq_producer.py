@@ -6,22 +6,21 @@ Author: Derek Graves
 Date: May 31, 2024
 """
 
+# Imports needed
 import pika
 import csv
 import sys
 import webbrowser
 import time
-import traceback
 from util_logger import setup_logger
 
 # Set up logger
 logger, logname = setup_logger(__file__)
 
-# Configuration variables
+# Constants
 HOST = "localhost"
 QUEUE_NAMES = ["01-smoker", "02-food-A", "03-food-B"]
 CSV_FILE = "smoker-temps.csv"
-SHOW_OFFER = False
 DELAY = 30  # Delay in seconds between sending tasks (30 for this assignment)
 
 def offer_rabbitmq_admin_site():
@@ -29,7 +28,7 @@ def offer_rabbitmq_admin_site():
     ans = input("Would you like to monitor RabbitMQ queues? y or n ")
     if ans.lower() == "y":
         webbrowser.open_new("http://localhost:15672/#/queues")
-        print()
+        logger.info("Opened RabbitMQ Admin site")
 
 def connect_and_setup_queues(host):
     """
@@ -39,7 +38,6 @@ def connect_and_setup_queues(host):
         host (str): the host name or IP address of the RabbitMQ server
     """
     try:
-        # Create a blocking connection to the RabbitMQ server
         connection = pika.BlockingConnection(pika.ConnectionParameters(host))
         channel = connection.channel()
 
@@ -96,15 +94,15 @@ def process_csv_and_send_messages(filename, channel):
         sys.exit(1)
     except ValueError as e:
         logger.error(f"Error processing CSV: {e}")
+        sys.exit(1)
     except Exception as e:
         logger.error(f"An unexpected error occurred: {e}")
-        traceback.print_exc()  # Print the traceback for detailed error information
+        sys.exit(1)
 
-if __name__ == "__main__":
-    offer_rabbitmq_admin_site()
-
+def main(host):
+    """Main function to set up queues and process the CSV file."""
     # Get connection and channel
-    connection, channel = connect_and_setup_queues(HOST)
+    connection, channel = connect_and_setup_queues(host)
 
     try:
         # Process CSV and send messages
@@ -113,5 +111,13 @@ if __name__ == "__main__":
         # Close the connection to the server
         if connection.is_open:
             connection.close()
+
+if __name__ == "__main__":
+    offer_rabbitmq_admin_site()
+    main(HOST)
+
+
+
+
 
 
