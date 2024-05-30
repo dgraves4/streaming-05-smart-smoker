@@ -1,6 +1,22 @@
 """
-This program sends messages read from a CSV file to a queue on the RabbitMQ server.
-Adds logging instead of print statements for better visibility.
+This script reads temperature data from a CSV file and sends it to specified RabbitMQ queues at regular intervals.
+It simulates a streaming data producer for a "smart smoker" system, which monitors and reports the temperatures of the smoker and the food items being cooked.
+
+The script performs the following tasks:
+1. Connects to a RabbitMQ server.
+2. Deletes existing queues (if any) and declares new ones.
+3. Reads temperature data from a CSV file.
+4. Publishes the temperature data to the appropriate RabbitMQ queues at 30-second intervals.
+5. Logs all operations for better visibility and debugging.
+
+Queues:
+- "01-smoker": For smoker temperature readings.
+- "02-food-A": For food item A temperature readings.
+- "03-food-B": For food item B temperature readings.
+
+Usage:
+- The user is prompted to open the RabbitMQ Admin interface for monitoring the queues.
+- Ensure RabbitMQ server is running and accessible prior to executing.
 
 Author: Derek Graves
 Date: May 31, 2024
