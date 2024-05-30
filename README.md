@@ -11,8 +11,8 @@ The script performs the following tasks:
 
 ## Author
 
-Derek Graves
-May 31, 2024
+- Derek Graves
+- May 31, 2024
 
 ## Prior to Beginning
 
@@ -52,7 +52,7 @@ pip install -r requirements.txt
 - Add CSV data file to root project folder 'smoker-temps.csv'.
 
 ## Directory Structure
-
+```bash
 streaming-05-smart-smoker/
 ├── .venv/
 ├── .gitignore
@@ -61,7 +61,7 @@ streaming-05-smart-smoker/
 ├── smoker-temps.csv
 ├── util_logger.py
 └── README.md
-
+```
 ## Design and Implement Producer
 - Copy util_logger.py into project folder if you wish to use the logging utility.
 - Create producer script:
@@ -186,19 +186,25 @@ def main(host, queue_names, filename, delay):
             connection.close()
 ```
 5. Finally, call the main function, which completes the following:
-
-1. Establishes a connection to the RabbitMQ server running on localhost.
-2. Deletes any existing queues named "01-smoker", "02-food-A", and "03-food-B" and then declares new queues with these names.
-3. Processes a CSV file containing smoker temperature data.
-4. For each row in the CSV file, it extracts the timestamp, smoker temperature, food A temperature, and food B temperature.
-5. If the smoker temperature is available (not empty), it converts it to a float and sends a message to the "01-smoker" queue.
-6. Similarly, if food A or food B temperatures are available, it converts them to float and sends messages to the respective queues.
+- Establishes a connection to the RabbitMQ server running on localhost.
+- Deletes any existing queues named "01-smoker", "02-food-A", and "03-food-B" and then declares new queues with these names.
+- Processes a CSV file containing smoker temperature data.
+- For each row in the CSV file, it extracts the timestamp, smoker temperature, food A temperature, and food B temperature.
+- If the smoker temperature is available (not empty), it converts it to a float and sends a message to the "01-smoker" queue.
+- Similarly, if food A or food B temperatures are available, it converts them to float and sends messages to the respective queues.
 
 ```bash
 if __name__ == "__main__":
     offer_rabbitmq_admin_site()
     main(HOST, QUEUE_NAMES, CSV_FILE, DELAY)
 ```
+
+## Screenshots
+
+See a running example of the code executing in the terminal, as well as an example of RabbitMQ Admin displaying that all queues are running:
+![RabbitMQ Admin](images\AdminQueues.png)
+![Terminal Initial Execution](images\InitialExecute.png)
+![Terminal Sending Data to Queue](images\SendingData.png)
 
 ## Future Enhancements
 - Consumers: Next module will see the addition of consumers to process the messages from the queues. 

@@ -1,0 +1,21 @@
+2024-05-30 16:22:50,676.bbq_producer_v1.0.INFO ==================================================
+2024-05-30 16:22:50,676.bbq_producer_v1.0.INFO Today is 2024-05-30 at 04:22 PM
+2024-05-30 16:22:50,676.bbq_producer_v1.0.INFO Running on: nt Windows 11
+2024-05-30 16:22:50,676.bbq_producer_v1.0.INFO Python version:  3.12.2
+2024-05-30 16:22:50,676.bbq_producer_v1.0.INFO Python path: C:\Users\derek\AppData\Local\Programs\Python\Python312
+2024-05-30 16:22:50,676.bbq_producer_v1.0.INFO Working dir: C:\Users\derek\OneDrive\Documents\Streaming Data\Week 5\streaming-05-smart-smoker
+2024-05-30 16:22:50,677.bbq_producer_v1.0.INFO ==================================================
+2024-05-30 16:23:53,742.bbq_producer_v1.0.INFO Opened RabbitMQ Admin site
+2024-05-30 16:23:53,801.bbq_producer_v1.0.INFO Sent 5/22/2021 12:20, 84.2 to 01-smoker
+2024-05-30 16:24:23,805.bbq_producer_v1.0.INFO Sent 5/22/2021 12:20, 84.2 to 01-smoker
+2024-05-30 16:24:53,806.bbq_producer_v1.0.INFO Sent 5/22/2021 12:21, 87.6 to 01-smoker
+2024-05-30 16:25:23,807.bbq_producer_v1.0.INFO Sent 5/22/2021 12:21, 87.6 to 01-smoker
+2024-05-30 16:25:53,808.bbq_producer_v1.0.INFO Sent 5/22/2021 12:22, 86.3 to 01-smoker
+2024-05-30 16:26:23,808.bbq_producer_v1.0.INFO Sent 5/22/2021 12:22, 86.3 to 01-smoker
+2024-05-30 16:26:53,809.bbq_producer_v1.0.INFO Sent 5/22/2021 12:23, 92.0 to 01-smoker
+2024-05-30 16:27:23,810.bbq_producer_v1.0.INFO Sent 5/22/2021 12:23, 92.0 to 01-smoker
+2024-05-30 16:27:53,811.bbq_producer_v1.0.INFO Sent 5/22/2021 12:24, 96.8 to 01-smoker
+2024-05-30 16:28:23,812.bbq_producer_v1.0.INFO Sent 5/22/2021 12:24, 96.8 to 01-smoker
+2024-05-30 16:28:53,813.bbq_producer_v1.0.INFO Sent 5/22/2021 12:25, 100.6 to 01-smoker
+2024-05-30 16:29:23,814.bbq_producer_v1.0.INFO Sent 5/22/2021 12:25, 100.9 to 01-smoker
+2024-05-30 16:29:53,815.bbq_producer_v1.0.INFO Sent 5/22/2021 12:25, 100.9 to 01-smoker
