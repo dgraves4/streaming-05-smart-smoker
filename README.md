@@ -203,7 +203,7 @@ if __name__ == "__main__":
 ## Screenshots
 
 See a running example of the code executing in the terminal, as well as an example of RabbitMQ Admin displaying that all queues are running:
-![RabbitMQ Admin](images/AdminQueues.pngAdminQueues.png)
+![RabbitMQ Admin](images/AdminQueues.png)
 ![Terminal Initial Execution](images/InitialExecute.png)
 ![Terminal Sending Data to Queue](images/SendingData.png)
 
