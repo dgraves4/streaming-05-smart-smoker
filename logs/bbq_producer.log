@@ -1,15 +1,10 @@
-2024-05-30 14:46:27,893.bbq_producer.INFO ==================================================
-2024-05-30 14:46:27,893.bbq_producer.INFO Today is 2024-05-30 at 02:46 PM
-2024-05-30 14:46:27,893.bbq_producer.INFO Running on: nt Windows 11
-2024-05-30 14:46:27,894.bbq_producer.INFO Python version:  3.12.2
-2024-05-30 14:46:27,894.bbq_producer.INFO Python path: C:\Users\derek\AppData\Local\Programs\Python\Python312
-2024-05-30 14:46:27,894.bbq_producer.INFO Working dir: C:\Users\derek\OneDrive\Documents\Streaming Data\Week 5\streaming-05-smart-smoker
-2024-05-30 14:46:27,894.bbq_producer.INFO ==================================================
-2024-05-30 14:46:32,010.bbq_producer.INFO Opened RabbitMQ Admin site
-2024-05-30 14:46:32,043.bbq_producer.INFO Sent 5/22/2021 12:20, 84.2 to 01-smoker
-2024-05-30 14:47:02,044.bbq_producer.INFO Sent 5/22/2021 12:20, 84.2 to 01-smoker
-2024-05-30 14:47:32,046.bbq_producer.INFO Sent 5/22/2021 12:21, 87.6 to 01-smoker
-2024-05-30 14:48:02,047.bbq_producer.INFO Sent 5/22/2021 12:21, 87.6 to 01-smoker
-2024-05-30 14:48:32,048.bbq_producer.INFO Sent 5/22/2021 12:22, 86.3 to 01-smoker
-2024-05-30 14:49:02,049.bbq_producer.INFO Sent 5/22/2021 12:22, 86.3 to 01-smoker
-2024-05-30 14:49:32,050.bbq_producer.INFO Sent 5/22/2021 12:23, 92.0 to 01-smoker
+2024-05-30 14:59:18,259.bbq_producer.INFO ==================================================
+2024-05-30 14:59:18,260.bbq_producer.INFO Today is 2024-05-30 at 02:59 PM
+2024-05-30 14:59:18,260.bbq_producer.INFO Running on: nt Windows 11
+2024-05-30 14:59:18,260.bbq_producer.INFO Python version:  3.12.2
+2024-05-30 14:59:18,260.bbq_producer.INFO Python path: C:\Users\derek\AppData\Local\Programs\Python\Python312
+2024-05-30 14:59:18,260.bbq_producer.INFO Working dir: C:\Users\derek\OneDrive\Documents\Streaming Data\Week 5\streaming-05-smart-smoker
+2024-05-30 14:59:18,261.bbq_producer.INFO ==================================================
+2024-05-30 14:59:24,089.bbq_producer.INFO Opened RabbitMQ Admin site
+2024-05-30 14:59:24,121.bbq_producer.INFO Sent 5/22/2021 12:20, 84.2 to 01-smoker
+2024-05-30 14:59:54,122.bbq_producer.INFO Sent 5/22/2021 12:20, 84.2 to 01-smoker

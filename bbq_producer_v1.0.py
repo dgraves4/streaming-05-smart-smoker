@@ -16,7 +16,7 @@ Queues:
 
 Usage:
 - The user is prompted to open the RabbitMQ Admin interface for monitoring the queues.
-- Ensure RabbitMQ server is running and accessible prior to executing.
+- Ensure RabbitMQ server is running and accessible.
 
 Author: Derek Graves
 Date: May 31, 2024
@@ -46,19 +46,20 @@ def offer_rabbitmq_admin_site():
         webbrowser.open_new("http://localhost:15672/#/queues")
         logger.info("Opened RabbitMQ Admin site")
 
-def connect_and_setup_queues(host):
+def connect_and_setup_queues(host, queue_names):
     """
     Connect to RabbitMQ server, delete existing queues, and declare them anew.
 
     Parameters:
         host (str): the host name or IP address of the RabbitMQ server
+        queue_names (list): list of queue names to delete and declare
     """
     try:
         connection = pika.BlockingConnection(pika.ConnectionParameters(host))
         channel = connection.channel()
 
         # Delete existing queues and declare them anew
-        for queue_name in QUEUE_NAMES:
+        for queue_name in queue_names:
             channel.queue_delete(queue=queue_name)
             channel.queue_declare(queue=queue_name, durable=True)
 
@@ -83,8 +84,16 @@ def send_message(channel, queue_name, message):
     except Exception as e:
         logger.error(f"Error sending message to {queue_name}: {e}")
 
-def process_csv_and_send_messages(filename, channel):
-    """Read tasks from a CSV file and send messages to the appropriate queues."""
+def process_csv_and_send_messages(filename, channel, queue_names, delay):
+    """
+    Read tasks from a CSV file and send messages to the appropriate queues.
+
+    Parameters:
+        filename (str): the name of the CSV file to read from
+        channel: the communication channel to the RabbitMQ server
+        queue_names (list): list of queue names to send messages to
+        delay (int): delay in seconds between sending messages
+    """
     try:
         with open(filename, newline='', encoding='utf-8-sig') as csvfile:
             reader = csv.DictReader(csvfile)
@@ -96,15 +105,15 @@ def process_csv_and_send_messages(filename, channel):
 
                 if smoker_temp_str:
                     smoker_temp = float(smoker_temp_str)
-                    send_message(channel, "01-smoker", f"{timestamp}, {smoker_temp}")
+                    send_message(channel, queue_names[0], f"{timestamp}, {smoker_temp}")
                 if food_a_temp_str:
                     food_a_temp = float(food_a_temp_str)
-                    send_message(channel, "02-food-A", f"{timestamp}, {food_a_temp}")
+                    send_message(channel, queue_names[1], f"{timestamp}, {food_a_temp}")
                 if food_b_temp_str:
                     food_b_temp = float(food_b_temp_str)
-                    send_message(channel, "03-food-B", f"{timestamp}, {food_b_temp}")
+                    send_message(channel, queue_names[2], f"{timestamp}, {food_b_temp}")
 
-                time.sleep(DELAY)  # Simulate sleep between messages 30 seconds
+                time.sleep(delay)  # Simulate sleep between messages 30 seconds
     except FileNotFoundError:
         logger.error(f"CSV file {filename} not found.")
         sys.exit(1)
@@ -115,14 +124,22 @@ def process_csv_and_send_messages(filename, channel):
         logger.error(f"An unexpected error occurred: {e}")
         sys.exit(1)
 
-def main(host):
-    """Main function to set up queues and process the CSV file."""
+def main(host, queue_names, filename, delay):
+    """
+    Main function to set up queues and process the CSV file.
+
+    Parameters:
+        host (str): the host name or IP address of the RabbitMQ server
+        queue_names (list): list of queue names to delete and declare
+        filename (str): the name of the CSV file to read from
+        delay (int): delay in seconds between sending messages
+    """
     # Get connection and channel
-    connection, channel = connect_and_setup_queues(host)
+    connection, channel = connect_and_setup_queues(host, queue_names)
 
     try:
         # Process CSV and send messages
-        process_csv_and_send_messages(CSV_FILE, channel)
+        process_csv_and_send_messages(filename, channel, queue_names, delay)
     finally:
         # Close the connection to the server
         if connection.is_open:
@@ -130,7 +147,8 @@ def main(host):
 
 if __name__ == "__main__":
     offer_rabbitmq_admin_site()
-    main(HOST)
+    main(HOST, QUEUE_NAMES, CSV_FILE, DELAY)
+
 
 
 
