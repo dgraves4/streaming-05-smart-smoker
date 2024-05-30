@@ -211,8 +211,11 @@ See a running example of the code executing in the terminal, as well as an examp
 - Consumers: Next module will see the addition of consumers to process the messages from the queues. 
 - Alerts: Implementing alter mechanisms for events detected in temperature data (via email, etc.).
 
+## Sources
 
-
+- [Project 4 Repository](https://github.com/dgraves4/streaming-04-multiple-consumers)
+- [RabbitMQ Tutorials](https://www.rabbitmq.com/tutorials)
+- [OpenAI](https://chatgpt.com/)
 
 
 
