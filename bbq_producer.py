@@ -18,10 +18,10 @@ logger, logname = setup_logger(__file__)
 
 # Configuration variables
 HOST = "localhost"
-QUEUE_NAME = "dgraves4_task_queue"
-CSV_FILE = "tasks.csv"
+QUEUE_NAMES = ["01-smoker", "02-food-A", "03-food-B"]
+CSV_FILE = "smoker-temps.csv"
 SHOW_OFFER = False
-DELAY = 3  # Delay in seconds between sending tasks
+DELAY = 30  # Delay in seconds between sending tasks (30 for this assignment)
 
 def offer_rabbitmq_admin_site(show_offer=True):
     """Offer to open the RabbitMQ Admin website"""
@@ -50,7 +50,7 @@ def send_message(host: str, queue_name: str, message: str):
         # use the channel to publish a message to the queue
         ch.basic_publish(exchange="", routing_key=queue_name, body=message,
                          properties=pika.BasicProperties(delivery_mode=2))  # make message persistent
-        logger.info(f"Sent {message}")
+        logger.info(f"Sent {message} to {queue_name}") # log the message sent to specific queue
     except pika.exceptions.AMQPConnectionError as e:
         logger.error(f"Connection to RabbitMQ server failed: {e}")
         sys.exit(1)
@@ -64,10 +64,14 @@ def read_tasks_from_csv(filename=CSV_FILE):
     tasks = []
     try:
         with open(filename, newline='') as csvfile:
-            task_reader = csv.reader(csvfile)
+            task_reader = csv.DictReader(csvfile)
             for row in task_reader:
-                task = ' '.join(row)
-                tasks.append(task)
+                tasks.append({
+                    "timestamp": row["Time"]
+                    "smoker_temp": row["Channel1"]
+                    "food_a_temp": row["Channel2"]
+                    "food_b_temp": row["Channel3"]
+                })
     except FileNotFoundError:
         logger.error(f"File {filename} not found.")
         sys.exit(1)
@@ -81,6 +85,8 @@ if __name__ == "__main__":
 
     # Send each task to the queue
     for task in tasks:
-        send_message(HOST, QUEUE_NAME, task)
-        time.sleep(DELAY)  # Simulate delay for sending tasks
+        send_message(HOST, "01-smoker", f"task['timestamp'] task['smoker_temp']")
+        send_message(HOST, "02-food-A", f"task['timestamp'] task['food_a_temp']")
+        send_message(HOST, "03-food-B", f"task['timestamp'] task['food_b_temp']")
+        time.sleep(DELAY) #Simulate sleep between messages 30 seconds
 
