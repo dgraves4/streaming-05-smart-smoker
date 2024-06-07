@@ -1,14 +1,11 @@
 import smtplib
 from email.message import EmailMessage
-import tomllib  # Requires Python 3.11
-import pprint
+import tomli  # For Python 3.11+, use tomllib instead
 
 def load_secrets(file_path='.env.toml'):
     """Load secrets from the .env.toml file."""
     with open(file_path, 'rb') as f:
-        config = tomllib.load(f)
-    pprint.pprint(config)
-    return config
+        return tomli.load(f)
 
 def create_and_send_text_alert(text_message: str):
     """Send a text alert using the SMTP-to-SMS gateway."""
@@ -24,15 +21,14 @@ def create_and_send_text_alert(text_message: str):
     msg["To"] = sms_address
     msg.set_content(text_message)
 
-    print("Prepared Email Message:")
-    print(msg)
-
     try:
         server = smtplib.SMTP(host, port)
         server.starttls()
         server.login(outemail, outpwd)
         server.send_message(msg)
-        print("Message sent.")
+        print("Message sent successfully.")
+    except smtplib.SMTPAuthenticationError:
+        print("Authentication error. Verify your email and password.")
     except Exception as e:
         print(f"Error: {e}")
     finally:
@@ -41,3 +37,4 @@ def create_and_send_text_alert(text_message: str):
 if __name__ == "__main__":
     msg = "Alert: This is a test message."
     create_and_send_text_alert(msg)
+
