@@ -22,8 +22,9 @@ TEMPERATURE_DROP_THRESHOLD = 15  # Degrees Fahrenheit
 
 def smoker_callback(ch, method, properties, body):
     """Process messages from the smoker queue."""
-    message = json.loads(body)
-    temperature = message.get('temperature')
+    message = body.decode()  # Decode the message body
+    timestamp, temperature_str = message.split(', ')
+    temperature = float(temperature_str)
     logger.info(f"Received temperature: {temperature}")
 
     # Add to deque and check for temperature drop

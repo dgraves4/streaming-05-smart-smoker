@@ -22,8 +22,9 @@ TEMPERATURE_CHANGE_THRESHOLD = 1  # Degrees Fahrenheit
 
 def food_a_callback(ch, method, properties, body):
     """Process messages from the food A queue."""
-    message = json.loads(body)
-    temperature = message.get('temperature')
+    message = body.decode()  # Decode the message body
+    timestamp, temperature_str = message.split(', ')
+    temperature = float(temperature_str)
     logger.info(f"Received temperature: {temperature}")
 
     # Add to deque and check for temperature stall
@@ -55,3 +56,4 @@ if __name__ == "__main__":
     # Deque for storing recent temperature readings
     temperature_readings = deque(maxlen=DEQUE_MAX_LENGTH)
     main()
+
