@@ -386,6 +386,15 @@ See a running example of the code executing in the terminal, as well as an examp
 ![RabbitMQ Admin](images/AdminQueues.png)
 ![Terminal Initial Execution](images/InitialExecute.png)
 ![Terminal Sending Data to Queue](images/SendingData.png)
+![Producer Reading Temperatures](images/Producer.png)
+![Smoker Monitor](images/SmokerMonitor.png)
+![Food A Monitor](images/FoodAMonitor.png)
+![Food B Monitor](images/FoodBMonitor.png)
+![Producer and Consumer Terminals](images/ProducerToConsumers.png)
+![Smoker Alert with Timestamp](images/Consumer_Smoker_Alert.png)
+![Food A Stall Alert with Timestamp](images/ConsumerAFoodStallAlert.png)
+![Food B Stall Alert with Timestamp](images/ConsumerBFoodStallAlert.png)
+
 
 ## Future Enhancements
 - Consumers: Next module will see the addition of consumers to process the messages from the queues. 

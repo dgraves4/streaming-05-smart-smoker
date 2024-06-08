@@ -1,0 +1,82 @@
+2024-06-07 18:58:09,777.consumer_smoker.INFO ==================================================
+2024-06-07 18:58:09,778.consumer_smoker.INFO Today is 2024-06-07 at 06:58 PM
+2024-06-07 18:58:09,778.consumer_smoker.INFO Running on: nt Windows 11
+2024-06-07 18:58:09,778.consumer_smoker.INFO Python version:  3.12.2
+2024-06-07 18:58:09,778.consumer_smoker.INFO Python path: C:\Users\derek\OneDrive\Documents\Streaming Data\Week 5\streaming-05-smart-smoker\.venv
+2024-06-07 18:58:09,778.consumer_smoker.INFO Working dir: C:\Users\derek\OneDrive\Documents\Streaming Data\Week 5\streaming-05-smart-smoker
+2024-06-07 18:58:09,779.consumer_smoker.INFO ==================================================
+2024-06-07 18:58:09,789.consumer_smoker.INFO Waiting for smoker messages...
+2024-06-07 18:58:09,789.consumer_smoker.INFO Received temperature: 150.0
+2024-06-07 18:58:17,078.consumer_smoker.INFO Received temperature: 150.1
+2024-06-07 18:58:47,079.consumer_smoker.INFO Received temperature: 150.0
+2024-06-07 18:59:17,081.consumer_smoker.INFO Received temperature: 149.9
+2024-06-07 18:59:47,083.consumer_smoker.INFO Received temperature: 150.0
+2024-06-07 19:00:17,086.consumer_smoker.INFO Received temperature: 149.8
+2024-06-07 19:00:47,088.consumer_smoker.INFO Received temperature: 150.0
+2024-06-07 19:01:17,090.consumer_smoker.INFO Received temperature: 149.9
+2024-06-07 19:01:47,091.consumer_smoker.INFO Received temperature: 150.0
+2024-06-07 19:02:17,093.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:02:17,094.consumer_smoker.WARNING Smoker Alert! Temperature dropped by 15.0°F at 5/22/2021 12:25
+2024-06-07 19:02:18,129.consumer_smoker.INFO Text alert sent successfully.
+2024-06-07 19:02:47,096.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:02:47,096.consumer_smoker.WARNING Smoker Alert! Temperature dropped by 15.0°F at 5/22/2021 12:25
+2024-06-07 19:02:47,899.consumer_smoker.INFO Text alert sent successfully.
+2024-06-07 19:03:17,098.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:03:17,098.consumer_smoker.WARNING Smoker Alert! Temperature dropped by 15.0°F at 5/22/2021 12:25
+2024-06-07 19:03:17,850.consumer_smoker.INFO Text alert sent successfully.
+2024-06-07 19:03:47,100.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:03:47,101.consumer_smoker.WARNING Smoker Alert! Temperature dropped by 15.0°F at 5/22/2021 12:26
+2024-06-07 19:03:47,845.consumer_smoker.INFO Text alert sent successfully.
+2024-06-07 19:04:17,103.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:04:47,104.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:05:17,106.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:05:47,108.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:06:17,111.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:06:47,112.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:07:17,115.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:07:47,116.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:08:17,118.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:08:47,122.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:09:17,123.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:09:47,131.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:10:17,126.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:10:47,128.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:11:17,131.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:11:47,134.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:12:17,135.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:12:47,137.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:13:17,138.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:13:47,141.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:14:17,142.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:14:47,145.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:15:17,147.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:15:47,148.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:16:17,150.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:16:47,153.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:17:17,154.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:17:47,157.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:18:17,159.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:18:47,162.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:19:17,163.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:19:47,165.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:20:17,168.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:20:47,169.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:21:17,170.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:21:47,172.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:22:17,174.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:22:47,176.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:23:17,177.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:23:47,179.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:24:17,182.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:24:47,183.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:25:17,184.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:25:47,186.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:26:17,189.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:26:47,190.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:27:17,192.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:27:47,194.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:28:17,195.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:28:47,197.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:29:17,201.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:29:47,201.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:30:17,203.consumer_smoker.INFO Received temperature: 134.8

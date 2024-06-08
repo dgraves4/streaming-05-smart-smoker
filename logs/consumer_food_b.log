@@ -1,0 +1,168 @@
+2024-06-07 18:58:34,675.consumer_food_b.INFO ==================================================
+2024-06-07 18:58:34,675.consumer_food_b.INFO Today is 2024-06-07 at 06:58 PM
+2024-06-07 18:58:34,675.consumer_food_b.INFO Running on: nt Windows 11
+2024-06-07 18:58:34,675.consumer_food_b.INFO Python version:  3.12.2
+2024-06-07 18:58:34,677.consumer_food_b.INFO Python path: C:\Users\derek\OneDrive\Documents\Streaming Data\Week 5\streaming-05-smart-smoker\.venv
+2024-06-07 18:58:34,677.consumer_food_b.INFO Working dir: C:\Users\derek\OneDrive\Documents\Streaming Data\Week 5\streaming-05-smart-smoker
+2024-06-07 18:58:34,677.consumer_food_b.INFO ==================================================
+2024-06-07 18:58:34,688.consumer_food_b.INFO Waiting for food B messages...
+2024-06-07 18:58:34,688.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 18:58:34,688.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 18:58:47,081.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 18:59:17,083.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 18:59:47,084.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:00:17,087.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:00:47,088.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:01:17,090.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:01:47,093.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:02:17,094.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:02:47,097.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:03:17,099.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:03:47,101.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:04:17,103.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:04:47,106.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:05:17,107.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:05:47,109.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:06:17,112.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:06:47,113.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:07:17,115.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:07:17,116.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:29
+2024-06-07 19:07:17,712.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:07:47,117.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:07:47,117.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:30
+2024-06-07 19:07:47,688.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:08:17,119.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:08:17,119.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:30
+2024-06-07 19:08:17,765.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:08:47,122.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:08:47,122.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:31
+2024-06-07 19:08:47,798.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:09:17,123.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:09:17,123.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:31
+2024-06-07 19:09:17,821.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:09:47,131.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:09:47,131.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:32
+2024-06-07 19:09:47,821.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:10:17,128.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:10:17,128.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:32
+2024-06-07 19:10:17,727.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:10:47,130.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:10:47,130.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:33
+2024-06-07 19:10:48,074.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:11:17,131.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:11:17,133.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:33
+2024-06-07 19:11:23,091.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:11:47,135.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:11:47,135.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:34
+2024-06-07 19:11:47,772.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:12:17,136.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:12:17,136.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:34
+2024-06-07 19:12:27,981.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:12:47,138.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:12:47,138.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:35
+2024-06-07 19:12:47,732.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:13:17,140.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:13:17,140.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:35
+2024-06-07 19:13:17,876.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:13:47,142.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:13:47,142.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:36
+2024-06-07 19:13:47,870.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:14:17,143.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:14:17,143.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:36
+2024-06-07 19:14:17,878.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:14:47,146.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:14:47,146.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:37
+2024-06-07 19:14:47,742.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:15:17,147.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:15:17,147.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:37
+2024-06-07 19:15:17,752.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:15:47,149.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:15:47,150.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:38
+2024-06-07 19:15:47,869.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:16:17,151.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:16:17,152.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:38
+2024-06-07 19:16:17,756.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:16:47,154.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:16:47,154.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:39
+2024-06-07 19:16:47,990.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:17:17,155.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:17:17,156.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:39
+2024-06-07 19:17:17,886.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:17:47,158.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:17:47,158.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:40
+2024-06-07 19:17:47,819.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:18:17,160.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:18:17,160.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:40
+2024-06-07 19:18:17,936.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:18:47,162.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:18:47,162.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:41
+2024-06-07 19:18:47,749.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:19:17,163.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:19:17,164.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:41
+2024-06-07 19:19:17,771.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:19:47,166.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:19:47,166.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:42
+2024-06-07 19:19:47,908.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:20:17,168.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:20:17,168.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:42
+2024-06-07 19:20:17,749.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:20:47,170.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:20:47,170.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:43
+2024-06-07 19:20:47,772.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:21:17,171.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:21:17,171.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:43
+2024-06-07 19:21:17,756.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:21:47,173.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:21:47,173.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:44
+2024-06-07 19:21:47,923.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:22:17,175.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:22:17,175.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:44
+2024-06-07 19:22:17,872.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:22:47,176.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:22:47,177.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:45
+2024-06-07 19:22:48,486.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:23:17,179.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:23:17,179.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:45
+2024-06-07 19:23:22,907.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:23:47,180.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:23:47,181.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:46
+2024-06-07 19:23:47,780.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:24:17,183.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:24:17,183.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:46
+2024-06-07 19:24:17,874.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:24:47,184.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:24:47,184.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:47
+2024-06-07 19:24:47,942.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:25:17,186.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:25:17,186.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:47
+2024-06-07 19:25:17,888.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:25:47,187.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:25:47,187.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:48
+2024-06-07 19:25:47,800.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:26:17,189.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:26:17,190.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:48
+2024-06-07 19:26:17,751.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:26:47,191.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:26:47,191.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:49
+2024-06-07 19:26:47,818.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:27:17,193.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:27:17,193.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:49
+2024-06-07 19:27:17,928.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:27:47,195.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:27:47,195.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:50
+2024-06-07 19:27:47,785.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:28:17,197.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:28:17,197.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:50
+2024-06-07 19:28:17,919.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:28:47,198.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:28:47,198.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:51
+2024-06-07 19:28:47,763.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:29:17,201.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:29:17,201.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:51
+2024-06-07 19:29:17,888.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:29:47,201.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:29:47,202.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:52
+2024-06-07 19:29:47,796.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
+2024-06-07 19:30:17,203.consumer_food_b.INFO Received temperature: 75.0
+2024-06-07 19:30:17,203.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 12:52
+2024-06-07 19:30:17,781.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')
