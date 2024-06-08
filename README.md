@@ -58,6 +58,10 @@ streaming-05-smart-smoker/
 ├── images/
 ├── .gitignore
 ├── bbq_producer_v1.0.py
+├── consumer_smoker.py
+├── consumer_food_a.py
+├── consumer_food_b.py
+├── etexter.py
 ├── requirements.txt
 ├── smoker-temps.csv
 ├── util_logger.py
@@ -199,6 +203,182 @@ if __name__ == "__main__":
     offer_rabbitmq_admin_site()
     main(HOST, QUEUE_NAMES, CSV_FILE, DELAY)
 ```
+
+## Design and Implement Consumers
+
+1. Create three consumer files, one for the smoker temperature, and one each to monitor food A and B temperatures. Each script monitors a different aspect of the temperature data and logs significant events.
+- Create consumer_smoker.py
+```bash
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Constants
+QUEUE_NAME = '01-smoker'
+DEQUE_MAX_LENGTH = 5  # 2.5 minutes worth of readings (5 * 30 seconds)
+TEMPERATURE_DROP_THRESHOLD = 15  # Degrees Fahrenheit
+
+def smoker_callback(ch, method, properties, body):
+    """Process messages from the smoker queue."""
+    message = body.decode()  # Decode the message body
+    timestamp, temperature_str = message.split(', ')
+    temperature = float(temperature_str)
+    logger.info(f"Received temperature: {temperature}")
+
+    # Add to deque and check for temperature drop
+    temperature_readings.append(temperature)
+    if len(temperature_readings) == DEQUE_MAX_LENGTH:
+        temp_diff = temperature_readings[0] - temperature_readings[-1]
+        if temp_diff >= TEMPERATURE_DROP_THRESHOLD:
+            logger.warning(f"Smoker Alert! Temperature dropped by {temp_diff}°F")
+        temperature_readings.popleft()
+
+    # Acknowledge message
+    ch.basic_ack(delivery_tag=method.delivery_tag)
+
+def main():
+    """Main function to set up RabbitMQ consumer."""
+    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+    channel = connection.channel()
+
+    # Declare the queue
+    channel.queue_declare(queue=QUEUE_NAME, durable=True)
+
+    # Set up consumption of messages
+    channel.basic_consume(queue=QUEUE_NAME, on_message_callback=smoker_callback, auto_ack=False)
+
+    logger.info('Waiting for smoker messages...')
+    channel.start_consuming()
+
+if __name__ == "__main__":
+    # Deque for storing recent temperature readings
+    temperature_readings = deque(maxlen=DEQUE_MAX_LENGTH)
+    main()
+```
+- Create consumer_food_a.py and consumer_food_b.py files:
+```bash
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Constants
+QUEUE_NAME = '02-food-A'
+DEQUE_MAX_LENGTH = 20  # 10 minutes worth of readings (20 * 30 seconds)
+TEMPERATURE_CHANGE_THRESHOLD = 1  # Degrees Fahrenheit
+
+# Load secrets from .env.toml
+def load_secrets(file_path='.env.toml'):
+    """Load secrets from the .env.toml file."""
+    with open(file_path, 'rb') as f:
+        return tomli.load(f)
+
+def create_and_send_text_alert(text_message: str):
+    """Send a text alert using the SMTP-to-SMS gateway."""
+    secrets = load_secrets()
+    host = secrets["outgoing_email_host"]
+    port = secrets["outgoing_email_port"]
+    outemail = secrets["outgoing_email_address"]
+    outpwd = secrets["outgoing_email_password"]
+    sms_address = secrets["sms_address_for_texts"]
+
+    msg = EmailMessage()
+    msg["From"] = outemail
+    msg["To"] = sms_address
+    msg.set_content(text_message)
+
+    try:
+        server = smtplib.SMTP(host, port)
+        server.starttls()
+        server.login(outemail, outpwd)
+        server.send_message(msg)
+        logger.info("Text alert sent successfully.")
+    except smtplib.SMTPAuthenticationError:
+        logger.error("Authentication error. Verify your email and password.")
+    except Exception as e:
+        logger.error(f"Error: {e}")
+    finally:
+        server.quit()
+
+def food_a_callback(ch, method, properties, body):
+    """Process messages from the food A queue."""
+    message = body.decode()  # Decode the message body
+    timestamp, temperature_str = message.split(', ')
+    temperature = float(temperature_str)
+    logger.info(f"Received temperature: {temperature}")
+
+    # Add to deque and check for temperature stall
+    temperature_readings.append(temperature)
+    if len(temperature_readings) == DEQUE_MAX_LENGTH:
+        temp_diff = max(temperature_readings) - min(temperature_readings)
+        if temp_diff <= TEMPERATURE_CHANGE_THRESHOLD:
+            alert_message = f"Food A Stall Alert! Temperature change ≤ 1°F at {timestamp}"
+            logger.warning(alert_message)
+            create_and_send_text_alert(alert_message)
+        temperature_readings.popleft()
+
+    # Acknowledge message
+    ch.basic_ack(delivery_tag=method.delivery_tag)
+
+def main():
+    """Main function to set up RabbitMQ consumer."""
+    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+    channel = connection.channel()
+
+    # Declare the queue
+    channel.queue_declare(queue=QUEUE_NAME, durable=True)
+
+    # Set up consumption of messages
+    channel.basic_consume(queue=QUEUE_NAME, on_message_callback=food_a_callback, auto_ack=False)
+
+    logger.info('Waiting for food A messages...')
+    channel.start_consuming()
+
+if __name__ == "__main__":
+    # Deque for storing recent temperature readings
+    temperature_readings = deque(maxlen=DEQUE_MAX_LENGTH)
+    main()
+```
+
+## Running the Project
+
+1. Start the producer:
+- Execute the producer script to begin sending temperature data to the RabbitMQ queues:
+```bash
+python bbq_producer_v1.0.py
+```
+- This will read data from the smoker-temps.csv file and publish it to the specified queues (01-smoker, 02-food-A, 03-food-B) at 30-second intervals. The producer logs the operations and status updates to the console.
+
+2. Run each consumer script:
+- Open three separate terminal windows or tabs for running the consumers.  Run each file separately:
+```bash
+# For Smoker Temperature:
+python consumer_smoker.py
+
+# For Food A Temperature:
+python consumer_food_a.py
+
+# For Food B Temperature:
+python consumer_food_b.py
+```
+3. Monitor Logs and RabbitMQ Admin
+- Each consumer will log received temperature data and significant events to the console. Monitor these logs to observe how the consumers process the temperature data and detect alerts.
+- You can monitor the RabbitMQ queues using the RabbitMQ Admin interface: http://localhost:15672/#/queues.
+
+4. Example Output for Producer console:
+```bash
+INFO:__main__:Sent 2024-06-07 12:30:00, 225.4 to 01-smoker
+INFO:__main__:Sent 2024-06-07 12:30:00, 175.3 to 02-food-A
+INFO:__main__:Sent 2024-06-07 12:30:00, 165.8 to 03-food-B
+```
+
+5. Example Output for Consumer consoles:
+```bash
+INFO:__main__:Received temperature: 225.4
+INFO:__main__:Received temperature: 175.3
+WARNING:__main__:Food A Stall Alert! Temperature change ≤ 1°F
+```
+
+6.  To close the project, you will need to stop both consumers and producers in their consoles.  Use Ctrl+C in each terminal window to do so. 
 
 ## Screenshots
 
