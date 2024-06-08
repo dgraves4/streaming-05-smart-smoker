@@ -80,3 +80,15 @@
 2024-06-07 19:29:17,201.consumer_smoker.INFO Received temperature: 134.9
 2024-06-07 19:29:47,201.consumer_smoker.INFO Received temperature: 135.0
 2024-06-07 19:30:17,203.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:30:47,204.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:31:17,206.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:31:47,207.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:32:17,209.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:32:47,211.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:33:17,213.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:33:47,215.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:34:17,216.consumer_smoker.INFO Received temperature: 134.8
+2024-06-07 19:34:47,218.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:35:17,220.consumer_smoker.INFO Received temperature: 134.9
+2024-06-07 19:35:47,224.consumer_smoker.INFO Received temperature: 135.0
+2024-06-07 19:36:17,225.consumer_smoker.INFO Received temperature: 134.8

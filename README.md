@@ -1,18 +1,23 @@
 # streaming-05-smart-smoker
-This project simulates a streaming data producer for a "smart smoker" system. It reads temperature data from a CSV file and sends it to specified RabbitMQ queues at regular intervals. The system monitors and reports the temperatures of the smoker and the food items being cooked.
+This project simulates a streaming data producer for a "smart smoker" system. It reads temperature data from a CSV file and sends it to specified RabbitMQ queues at regular intervals. The system monitors and reports the temperatures of the smoker and the food items being cooked. Additionally, it includes consumer scripts that process this data to detect significant temperature drops in the smoker and temperature stalls in the food items, triggering alerts when thresholds are met.
 
-The script performs the following tasks:
+This project performs the following tasks:
 
 1. Connects to a RabbitMQ server.
 2. Deletes existing queues (if any) and declares new ones.
 3. Reads temperature data from a CSV file.
 4. Publishes the temperature data to the appropriate RabbitMQ queues at 30-second intervals.
 5. Logs all operations for better visibility and debugging.
+6. Consumes messages from the RabbitMQ queues via specific consumer scripts:
+- consumer_smoker.py monitors the smoker’s temperature for significant drops and triggers alerts if a drop of 15°F or more is detected.
+- consumer_food_a.py and consumer_food_b.py monitor food temperatures for stalls and trigger alerts if the temperature changes by less than 1°F over a 10-minute period.
+7. Sends alerts via email or SMS using the SMTP-to-SMS gateway when anomalies are detected by the consumer scripts.
+8. Logs the consumption and alert generation activities for troubleshooting and audit purposes.
 
 ## Author
 
 - Derek Graves
-- May 31, 2024
+- June 07, 2024
 
 ## Prior to Beginning
 
@@ -382,18 +387,41 @@ WARNING:__main__:Food A Stall Alert! Temperature change ≤ 1°F
 
 ## Screenshots
 
-See a running example of the code executing in the terminal, as well as an example of RabbitMQ Admin displaying that all queues are running:
-![RabbitMQ Admin](images/AdminQueues.png)
-![Terminal Initial Execution](images/InitialExecute.png)
-![Terminal Sending Data to Queue](images/SendingData.png)
-![Producer Reading Temperatures](images/Producer.png)
-![Smoker Monitor](images/SmokerMonitor.png)
-![Food A Monitor](images/FoodAMonitor.png)
-![Food B Monitor](images/FoodBMonitor.png)
-![Producer and Consumer Terminals](images/ProducerToConsumers.png)
-![Smoker Alert with Timestamp](images/Consumer_Smoker_Alert.png)
-![Food A Stall Alert with Timestamp](images/ConsumerAFoodStallAlert.png)
-![Food B Stall Alert with Timestamp](images/ConsumerBFoodStallAlert.png)
+See various screenshots below, which show different aspects of the "smart smoker" system in action:
+
+1. **RabbitMQ Admin:**
+   ![RabbitMQ Admin](images/AdminQueues.png)
+
+2. **Terminal Initial Execution:**
+   ![Terminal Initial Execution](images/InitialExecute.png)
+
+3. **Terminal Sending Data to Queue:**
+   ![Terminal Sending Data to Queue](images/SendingData.png)
+
+4. **Producer Reading Temperatures:**
+   ![Producer Reading Temperatures](images/Producer.png)
+
+5. **Smoker Monitor:**
+   ![Smoker Monitor](images/SmokerMonitor.png)
+
+6. **Food A Monitor:**
+   ![Food A Monitor](images/FoodAMonitor.png)
+
+7. **Food B Monitor:**
+   ![Food B Monitor](images/FoodBMonitor.png)
+
+8. **Producer and Consumer Terminals:**
+   ![Producer and Consumer Terminals](images/ProducerToConsumers.png)
+
+9. **Smoker Alert with Timestamp:**
+   ![Smoker Alert with Timestamp](images/Consumer_Smoker_Alert.png)
+
+10. **Food A Stall Alert with Timestamp:**
+    ![Food A Stall Alert with Timestamp](images/ConsumerAFoodStallAlert.png)
+
+11. **Food B Stall Alert with Timestamp:**
+    ![Food B Stall Alert with Timestamp](images/ConsumerBFoodStallAlert.png)
+
 
 
 ## Future Enhancements
