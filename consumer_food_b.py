@@ -9,14 +9,13 @@ Date: June 7, 2024
 import pika
 import json
 from collections import deque
-import logging
 import smtplib
 from email.message import EmailMessage
 import tomli  # Use tomli for reading TOML files
+from util_logger import setup_logger  # Use util_logger for consistent logging
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+# Set up logger
+logger, logname = setup_logger(__file__)
 
 # Constants
 QUEUE_NAME = '03-food-B'
@@ -94,5 +93,6 @@ if __name__ == "__main__":
     # Deque for storing recent temperature readings
     temperature_readings = deque(maxlen=DEQUE_MAX_LENGTH)
     main()
+
 
 
