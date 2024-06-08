@@ -280,3 +280,6 @@
 2024-06-07 19:49:17,275.consumer_food_b.INFO Received temperature: 75.0
 2024-06-07 19:49:17,275.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 13:11
 2024-06-07 19:49:17,980.consumer_food_b.INFO Text alert sent successfully.
+2024-06-07 19:49:47,277.consumer_food_b.INFO Received temperature: 75.1
+2024-06-07 19:49:47,277.consumer_food_b.WARNING Food B Stall Alert! Temperature change ≤ 1°F at 5/22/2021 13:12
+2024-06-07 19:49:47,863.consumer_food_b.ERROR Error: (432, b'4.3.2 Concurrent connections limit exceeded. Visit https://aka.ms/concurrent_sending for more information. [Hostname=PH0PR15MB5261.namprd15.prod.outlook.com]')

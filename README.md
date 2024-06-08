@@ -422,12 +422,6 @@ See various screenshots below, which show different aspects of the "smart smoker
 11. **Food B Stall Alert with Timestamp:**
     ![Food B Stall Alert with Timestamp](images/ConsumerBFoodStallAlert.png)
 
-
-
-## Future Enhancements
-- Consumers: Next module will see the addition of consumers to process the messages from the queues. 
-- Alerts: Implementing alter mechanisms for events detected in temperature data (via email, etc.).
-
 ## Sources
 
 - [Project 4 Repository](https://github.com/dgraves4/streaming-04-multiple-consumers)
