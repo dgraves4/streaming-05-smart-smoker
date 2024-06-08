@@ -267,3 +267,8 @@
 2024-06-07 17:12:21,664.bbq_producer_v1.0.INFO Sent 5/22/2021 14:00, 240.1 to 01-smoker
 2024-06-07 17:12:51,665.bbq_producer_v1.0.INFO Sent 5/22/2021 14:00, 240.1 to 01-smoker
 2024-06-07 17:13:21,666.bbq_producer_v1.0.INFO Sent 5/22/2021 14:00, 44.1 to 02-food-A
+2024-06-07 17:13:51,668.bbq_producer_v1.0.INFO Sent 5/22/2021 14:00, 44.1 to 02-food-A
+2024-06-07 17:13:51,668.bbq_producer_v1.0.INFO Sent 5/22/2021 14:00, 38.0 to 03-food-B
+2024-06-07 17:14:21,669.bbq_producer_v1.0.INFO Sent 5/22/2021 14:00, 38.0 to 03-food-B
+2024-06-07 17:14:51,670.bbq_producer_v1.0.INFO Sent 5/22/2021 14:01, 239.8 to 01-smoker
+2024-06-07 17:15:21,672.bbq_producer_v1.0.INFO Sent 5/22/2021 14:01, 239.8 to 01-smoker
